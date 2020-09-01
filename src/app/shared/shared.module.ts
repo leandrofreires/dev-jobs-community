@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { FlexLayoutModule } from '@angular/flex-layout';
 //Material modules
 import { MatButtonModule } from '@angular/material/button';
 
@@ -9,10 +10,10 @@ import { MatButtonModule } from '@angular/material/button';
   declarations: [],
   imports: [
     CommonModule,
-    MatButtonModule
   ],
   exports: [
-    MatButtonModule
+    MatButtonModule,
+    FlexLayoutModule
   ]
 })
 export class SharedModule { }
