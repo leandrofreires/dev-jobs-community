@@ -1,5 +1,10 @@
 
-![enter image description here](./src/assets/logo.svg =300x)
+<h1 align='center'>
+  <img width="200px" src="./src/assets/logo.svg" />
+</h1>
+<h2 align='center'>
+Dev Jobs Community
+</h2>
 
 ### why ?
  Dev Jobs Community is a helper for devs looking for opportunities, this project is to bring together the github repositories with offers of vacancies available in different areas, the best way to receive notifications of new vacancies is to follow the repositories of interest, the repositories currently listed by this site are:
