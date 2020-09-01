@@ -3,7 +3,8 @@
   <img width="200px" src="./src/assets/logo.svg" />
 </h1>
 <h2 align='center'>
-Dev Jobs Community
+Dev Jobs Community <br>
+[![CircleCI](https://circleci.com/gh/leandrofreires/dev-jobs-community.svg?style=svg)](https://circleci.com/gh/leandrofreires/dev-jobs-community)
 </h2>
 
 ### why ?
