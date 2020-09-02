@@ -9,11 +9,33 @@
 // Be sure that you only ever include this mixin once!
 @include mat-core();
 
+//define theme custom color schema
+$mat-app-blue: (
+  500: #57a4ff,//primary
+  100: #91d5ff,//light
+  700: #0076cb,//dark
+  contrast: (
+    500: $light-primary-text,
+    100: $dark-primary-text,
+    700: $light-primary-text,
+  )
+);
+$mat-app-red: (
+  500: #ff3051,//primary
+  100: #ff6d7d,//light
+  700: #c40029,//dark
+  contrast: (
+    500: $light-primary-text,
+    100: $dark-primary-text,
+    700: $light-primary-text,
+  )
+);
+
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$dev-jobs-primary: mat-palette($mat-indigo);
-$dev-jobs-accent: mat-palette($mat-pink, A200, A100, A400);
+$dev-jobs-primary: mat-palette($mat-app-blue);
+$dev-jobs-accent: mat-palette($mat-app-red);
 
 // The warn palette is optional (defaults to red).
 $dev-jobs-warn: mat-palette($mat-red);
@@ -37,4 +59,4 @@ $dev-jobs-theme: mat-light-theme((
 
 html, body { height: 100%; background-color: #fafafa; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-footer { background-color: map-get($dev-jobs-primary, 500 ); color: white}
+footer { background-color: mat-color($mat-app-red, 500); color:  mat-color($mat-app-red, '500-contrast');}
