@@ -7,6 +7,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 
 
 @NgModule({
@@ -20,6 +22,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatIconModule,
     MatTooltipModule,
     MatToolbarModule,
+    MatSidenavModule,
+    MatListModule
   ]
 })
 export class SharedModule { }

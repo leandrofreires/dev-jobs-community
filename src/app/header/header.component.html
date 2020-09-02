@@ -1,10 +1,10 @@
 <header>
     <mat-toolbar color='primary'>
-            <button mat-icon-button><mat-icon>menu</mat-icon></button>
+            <button mat-icon-button (click)="toogle()"><mat-icon>menu</mat-icon></button>
             <h1 fxFlexOffset='16px'>Dev Jobs Community</h1>
             <span fxFlex='1 1 auto'></span>
             <nav>
-                <a title="project on github" routerLink="" matTooltip="Follow on Github" mat-icon-button><img src="../../assets/github-circle-white-transparent.svg"></a>
+                <a title="project on github" target="_blank" href="https://github.com/leandrofreires/dev-jobs-community" matTooltip="Follow on Github" mat-icon-button><img src="../../assets/github-circle-white-transparent.svg"></a>
             </nav>
     </mat-toolbar>
 </header>
