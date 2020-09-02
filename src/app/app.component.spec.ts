@@ -1,13 +1,14 @@
-import { TestBed, async, ComponentFixture } from '@angular/core/testing';
+import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, Output, EventEmitter } from '@angular/core';
 import { SharedModule } from './shared/shared.module';
 import { HarnessLoader } from '@angular/cdk/testing';
 import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations/';
+import { MatSidenavHarness, MatDrawerHarness } from '@angular/material/sidenav/testing';
 @Component({selector: 'app-header', template: ''})
-class HeaderStubComponent {}
+class HeaderStubComponent { }
 
 @Component({selector: 'router-outlet', template: ''})
 class RouterOutletStubComponent { }
@@ -45,15 +46,34 @@ describe('AppComponent', () => {
     expect(component).toBeDefined();
   });
 
-  it('should it have a sidenav container component', () => {
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('mat-sidenav-container')).toBeTruthy();
+  it('should it have a sidenav container component', async () => {
+    const sidenavContainer = await loader.getHarness(MatDrawerHarness);
+    expect(sidenavContainer.host).toBeDefined();
+  });
+
+  it('should it have a sidenav', async () => {
+    const sidenav = await loader.getHarness(MatSidenavHarness);
+    expect(await sidenav.host()).toBeDefined();
   });
 
   it('should it have a element app-header', () => {
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('app-header')).toBeTruthy();
   });
+  
+  it('should it sidenav mode over', async () => {
+    const sidenav = await loader.getHarness(MatSidenavHarness);
+    expect(await sidenav.getMode()).toEqual('over');
+  });
+
+  it('should it to be closed on start', async () => {
+    const sidenav = await loader.getHarness(MatSidenavHarness);
+    expect(await sidenav.isOpen()).toBeFalse();
+  });
+
+  //it('should sidenav open on click button menu', async () => {
+  //
+  //});
 
   it('should it have a element main', () => {
     const fixture = TestBed.createComponent(AppComponent);
