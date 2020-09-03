@@ -17,6 +17,11 @@
 - [Vagas para UI/UX](https://github.com/uxbrasil/vagas)
 - [Vagas para QAs](https://github.com/qa-brasil/vagas)
 
+## screenshots
+<img width="30%" src="./screenshot-iphone.png">
+<img width="30%" src="./screenshot-iphone2.png" >
+<img width="30%" src="screenshot-ipad.png" >
+
 ## Source
 Ícons powered by [phatplus](https://www.flaticon.com/br/autores/phatplus)
 
