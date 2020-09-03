@@ -8,7 +8,6 @@
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
 @include mat-core();
-
 //define theme custom color schema
 $mat-app-blue: (
   500: #57a4ff,//primary
@@ -47,7 +46,8 @@ $dev-jobs-theme: mat-light-theme((
     primary: $dev-jobs-primary,
     accent: $dev-jobs-accent,
     warn: $dev-jobs-warn,
-  )
+  ),
+  density: minimum
 ));
 
 // Include theme styles for core and each component used in your app.
