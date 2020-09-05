@@ -27,7 +27,7 @@
   </mat-sidenav>
   <mat-sidenav-content fxLayout='column'>
     <app-header (sidenavEvent)="sidenavStatus = !sidenavStatus"></app-header>
-    <main>
+    <main fxFlex='auto'>
       <router-outlet></router-outlet>
     </main>
     <span fxFlex='1 1 auto'></span>

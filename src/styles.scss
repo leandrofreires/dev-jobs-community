@@ -1,7 +1,6 @@
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@import '~@angular/material/theming';
+@import "~@angular/material/theming";
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -10,24 +9,32 @@
 @include mat-core();
 //define theme custom color schema
 $mat-app-blue: (
-  500: #57a4ff,//primary
-  100: #91d5ff,//light
-  700: #0076cb,//dark
-  contrast: (
-    500: $light-primary-text,
-    100: $dark-primary-text,
-    700: $light-primary-text,
-  )
+  500: #57a4ff,
+  //primary
+  100: #91d5ff,
+  //light
+  700: #0076cb,
+  //dark
+  contrast:
+    (
+      500: $light-primary-text,
+      100: $dark-primary-text,
+      700: $light-primary-text,
+    ),
 );
 $mat-app-red: (
-  500: #ff3051,//primary
-  100: #ff6d7d,//light
-  700: #c40029,//dark
-  contrast: (
-    500: $light-primary-text,
-    100: $dark-primary-text,
-    700: $light-primary-text,
-  )
+  500: #ff3051,
+  //primary
+  100: #ff6d7d,
+  //light
+  700: #c40029,
+  //dark
+  contrast:
+    (
+      500: $light-primary-text,
+      100: $dark-primary-text,
+      700: $light-primary-text,
+    ),
 );
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
@@ -41,14 +48,16 @@ $dev-jobs-warn: mat-palette($mat-red);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$dev-jobs-theme: mat-light-theme((
-  color: (
-    primary: $dev-jobs-primary,
-    accent: $dev-jobs-accent,
-    warn: $dev-jobs-warn,
-  ),
-  density: minimum
-));
+$dev-jobs-theme: mat-light-theme(
+  (
+    color: (
+      primary: $dev-jobs-primary,
+      accent: $dev-jobs-accent,
+      warn: $dev-jobs-warn,
+    ),
+    // density: minimum
+  )
+);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
@@ -57,6 +66,27 @@ $dev-jobs-theme: mat-light-theme((
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; background-color: #fafafa; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-footer { background-color: mat-color($mat-app-red, 500); color:  mat-color($mat-app-red, '500-contrast');}
+html,
+body {
+  height: 100%;
+  background-color: #fafafa;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+footer {
+  background-color: mat-color($mat-app-blue, 500);
+  color: mat-color($mat-app-blue, "500-contrast");
+}
+.mat-toolbar {
+  @include mat-elevation(6);
+}
+
+.header-page {
+  z-index: -1;
+  height: 100px;
+  background-color: mat-color($mat-app-blue, 500);
+  color: white;
+  padding-left: 72px;
+}
