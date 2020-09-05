@@ -15,13 +15,13 @@ export class JobsListComponent implements OnInit {
   issues: Issue[] = [];
 
   ngOnInit(): void {
-    // this.jobsService.repos.forEach(async (repo) => {
+    this.jobsService.repos.forEach(async (repo) => {
 
-    //   let issueResponse = await this.jobsService.getIssues(repo).toPromise();
+      let issueResponse = await this.jobsService.getIssues(repo).toPromise();
 
-    //   this.issues = this.issues.concat(issueResponse);
+      this.issues = this.issues.concat(issueResponse);
       
-    // });
+    });
   }
 
 }
