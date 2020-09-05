@@ -1,1 +1,13 @@
-<p fxFlexAlign='center'>jobs works!</p>
+<section fxLayout='column'  fxLayoutGap='10px'>
+    <header fxLayoutAlign='start center' class='header-page'>
+        <h1>Jobs List</h1>
+    </header>
+    <section style="padding:16px;">
+        <mat-form-field>
+            <mat-label>Search on jobs your skills</mat-label>
+            <input matInput type="search" placeholder="filter your skills">
+            <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+    </section>
+    <app-jobs-list></app-jobs-list>
+</section>

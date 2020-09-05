@@ -1,0 +1,16 @@
+<mat-accordion>
+    <mat-expansion-panel *ngFor="let issue of issues" hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                {{issue.title}}
+            </mat-panel-title>
+            <mat-panel-description>
+                <span fxFlex='auto'></span>
+                <mat-chip-list aria-label="Fish selection">
+                    <mat-chip *ngFor="let label of issue.labels | slice:0:5" color="primary" selected>{{label.name}}</mat-chip>
+                </mat-chip-list>
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <markdown [data]="issue.body"></markdown>
+    </mat-expansion-panel>
+</mat-accordion>

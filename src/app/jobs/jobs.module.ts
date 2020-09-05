@@ -7,7 +7,7 @@ import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
-  declarations: [JobsComponent],
+  declarations: [JobsComponent, JobsListComponent],
   imports: [
     CommonModule,
     JobsRoutingModule,
