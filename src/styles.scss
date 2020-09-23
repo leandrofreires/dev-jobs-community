@@ -9,11 +9,11 @@
 @include mat-core();
 //define theme custom color schema
 $mat-app-blue: (
-  500: #57a4ff,
+  500: #5d00ed,
   //primary
-  100: #91d5ff,
+  100: #9946ff,
   //light
-  700: #0076cb,
+  700: #0000b9,
   //dark
   contrast:
     (
@@ -22,12 +22,12 @@ $mat-app-blue: (
       700: $light-primary-text,
     ),
 );
-$mat-app-red: (
-  500: #ff3051,
+$mat-app-complementary: (
+  500: #8bee00,
   //primary
-  100: #ff6d7d,
+  100: #c2ff54,
   //light
-  700: #c40029,
+  700: #53bb00,
   //dark
   contrast:
     (
@@ -41,7 +41,7 @@ $mat-app-red: (
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 $dev-jobs-primary: mat-palette($mat-app-blue);
-$dev-jobs-accent: mat-palette($mat-app-red);
+$dev-jobs-accent: mat-palette($mat-app-complementary);
 
 // The warn palette is optional (defaults to red).
 $dev-jobs-warn: mat-palette($mat-red);
@@ -70,23 +70,37 @@ html,
 body {
   height: 100%;
   background-color: #fafafa;
-}
-body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
-footer {
-  background-color: mat-color($mat-app-blue, 500);
-  color: mat-color($mat-app-blue, "500-contrast");
-}
+// footer {
+//   background-color: mat-color($mat-app-blue, 500);
+//   color: mat-color($mat-app-blue, "500-contrast");
+// }
 .mat-toolbar {
   @include mat-elevation(6);
 }
 
 .header-page {
+  padding: 16px;
   z-index: -1;
-  height: 100px;
-  background-color: mat-color($mat-light-blue, A100);
-  color: white;
-  padding-left: 72px;
+   background-color: mat-color($mat-app-blue,500);
+   color: mat-contrast($mat-app-blue,500);
+}
+.search-box {
+  .mat-form-field-underline,.mat-form-field-outline {
+    display: none !important;
+  }
+  
+  opacity: 0.9;
+    /* 06 dp */
+    background: #FFFFFF;
+
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.14), 0px 1px 18px rgba(0, 0, 0, 0.12), 0px 3px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 27.5px;
+    outline: none !important;
+    
+  .mat-form-field-wrapper,span.mat-form-field-wrapper {
+    padding: 0 !important;
+  }
 }

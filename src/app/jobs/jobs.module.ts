@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, SecurityContext } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { JobsRoutingModule } from './jobs-routing.module';
@@ -14,7 +14,9 @@ import { MarkdownModule } from 'ngx-markdown';
     CommonModule,
     JobsRoutingModule,
     SharedModule,
-    MarkdownModule.forRoot(),
+    MarkdownModule.forRoot({
+      sanitize: SecurityContext.NONE
+    }),
   ],
   providers: [
     JobsService

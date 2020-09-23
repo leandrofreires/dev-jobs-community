@@ -1,17 +1,10 @@
-<section fxLayout='column' fxLayoutGap='10px'>
-    <header fxLayoutAlign='start center' class='header-page'>
-        <h1>Jobs List</h1>
-    </header>
-    <section style="padding: 16px;" fxLayoutGap='10px' fxLayout='column'>
-    <mat-card>
-        <mat-form-field appearance="outline">
-            <mat-label>Search on jobs your skills</mat-label>
-            <input matInput type="search" placeholder="Filter by your skills">
-            <mat-icon matSuffix>search</mat-icon>
-        </mat-form-field>
-    </mat-card>
-
-    <app-jobs-list></app-jobs-list>
-    </section>
-    
+<header class="header-page" style="height: 457px;" fxLayout="row" fxLayoutAlign="center center">
+    <mat-form-field fxFlex='50' fxFlex.lt-md=90 appearance="outline" class="search-box">
+        <mat-label>Search by skills</mat-label>
+        <input matInput placeholder="Example: Remoto, Nodejs, Angular">
+        <mat-icon matPrefix>search</mat-icon>
+      </mat-form-field>
+</header>
+<section fxLayout="row" fxLayoutAlign="center center">
+   <app-jobs-list fxFlex=90 style="margin-top: -100px;"></app-jobs-list>
 </section>

@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { JobsService } from '../jobs.service';
-import { async } from 'rxjs';
+import { Component, OnInit, SecurityContext } from '@angular/core';
+import { JobsService, Repository } from '../jobs.service';
 import { Issue } from '../issue';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-jobs-list',
@@ -10,12 +10,14 @@ import { Issue } from '../issue';
 })
 export class JobsListComponent implements OnInit {
 
-  constructor(private jobsService: JobsService) { }
+  constructor(private jobsService: JobsService ) { }
 
   issues: Issue[] = [];
 
+  repositories: Repository[] = this.jobsService.repos;
+
   ngOnInit(): void {
-    this.jobsService.repos.forEach(async (repo) => {
+    this.repositories.forEach(async (repo) => {
 
       let issueResponse = await this.jobsService.getIssues(repo).toPromise();
 
@@ -23,5 +25,4 @@ export class JobsListComponent implements OnInit {
       
     });
   }
-
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Repository, JobsService } from './jobs.service';
 
 @Component({
   selector: 'app-jobs',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./jobs.component.scss']
 })
 export class JobsComponent implements OnInit {
+  
+  repositories: Repository[];
 
-  constructor() { }
+  constructor(private jobsService: JobsService) { }
 
   ngOnInit(): void {
+    this.repositories =  this.jobsService.repos;
   }
 
 }

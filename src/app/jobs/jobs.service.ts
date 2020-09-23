@@ -24,7 +24,7 @@ export class JobsService {
     return this.http.get<Issue[]>(this.getIssuesUrl(repo));
   }
 }
-interface Repository {
+export interface Repository {
   name: string;
   owner: string;
   fullName: string

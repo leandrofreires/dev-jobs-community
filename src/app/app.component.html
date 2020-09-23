@@ -17,20 +17,17 @@
         <mat-icon matListIcon color='primary'>next_week</mat-icon>
           <h1 matLine> Jobs </h1>
       </mat-list-item>
-      <mat-list-item routerLink="/jobs">
-        <mat-icon matListIcon color='primary'>amp_stories</mat-icon>
-          <h1 matLine> Blog </h1>
+      <mat-list-item routerLink="/about">
+        <mat-icon matListIcon color='primary'>help</mat-icon>
+          <h1 matLine> About </h1>
       </mat-list-item>
-      
-    
   </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content fxLayout='column'>
     <app-header (sidenavEvent)="sidenavStatus = !sidenavStatus"></app-header>
-    <main fxFlex='auto'>
+    <main fxFlex>
       <router-outlet></router-outlet>
     </main>
-    <span fxFlex='1 1 auto'></span>
     <app-footer></app-footer>
   </mat-sidenav-content>
 </mat-sidenav-container>

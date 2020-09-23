@@ -16,6 +16,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatDividerModule } from '@angular/material/divider';
+
 
 @NgModule({
   declarations: [],
@@ -37,6 +39,7 @@ import { MatChipsModule } from '@angular/material/chips';
     MatCardModule,
     MatCheckboxModule,
     MatChipsModule,
+    MatDividerModule,
   ]
 })
 export class SharedModule { }
