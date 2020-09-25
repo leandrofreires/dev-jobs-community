@@ -7,9 +7,9 @@ import { SharedModule } from '../shared/shared.module';
 import { JobsListComponent } from './jobs-list/jobs-list.component';
 import { JobsService } from './jobs.service';
 import { MarkdownModule } from 'ngx-markdown';
-
+import { SearchPipe } from './search.pipe';
 @NgModule({
-  declarations: [JobsComponent, JobsListComponent],
+  declarations: [JobsComponent, JobsListComponent, SearchPipe],
   imports: [
     CommonModule,
     JobsRoutingModule,

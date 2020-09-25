@@ -11,6 +11,9 @@ export class JobsComponent implements OnInit {
   repositories: Repository[];
 
   issueDone = false;
+
+  search: string;
+
   constructor(private jobsService: JobsService) { }
 
   ngOnInit(): void {
@@ -18,6 +21,9 @@ export class JobsComponent implements OnInit {
     this.jobsService.loadDone.subscribe((event: boolean) => {
       this.issueDone = event;
     })
+  }
+  onKey(value: string) {
+    this.search = value;
   }
 
 }
