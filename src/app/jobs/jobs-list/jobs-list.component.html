@@ -15,9 +15,9 @@
         <mat-chip-list>
             <mat-chip *ngFor="let label of issue.labels" color="accent" selected>{{label.name}}</mat-chip>
         </mat-chip-list>
-        
         <br>
         <mat-divider></mat-divider>
+        <br>
         <markdown ngPreserveWhitespaces>
             {{issue.body}}
         </markdown>
