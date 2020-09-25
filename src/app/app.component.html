@@ -1,23 +1,23 @@
 <mat-sidenav-container fxFill>
-  <mat-sidenav mode="over" (openedChange)="sidenavStatus=$event" [opened]="sidenavStatus" id="sidenav">
+  <mat-sidenav mode="over" #menu (openedChange)="sidenavStatus=$event" [opened]="sidenavStatus" id="sidenav">
     <mat-toolbar color='primary'>
       <mat-toolbar-row style="height: auto; padding-top: 16px;" fxLayoutAlign='center center'>
-      <img height="200px" src="../assets/logo.svg" alt="">
+      <img alt="logo do projecto" aria-label="logo do projecto" height="200px" src="../assets/logo.svg" alt="">
       </mat-toolbar-row>
       <mat-toolbar-row fxLayoutAlign='center center'>
         <span>Dev Jobs Community</span>
       </mat-toolbar-row>
     </mat-toolbar>
     <mat-nav-list>
-      <mat-list-item routerLink="/">
+      <mat-list-item routerLink="/" (click)="menu.toggle()">
         <mat-icon matListIcon color='primary'>home</mat-icon>
           <h1 matLine> Home </h1>
       </mat-list-item>
-      <mat-list-item routerLink="/jobs">
+      <mat-list-item routerLink="/jobs" (click)="menu.toggle()">
         <mat-icon matListIcon color='primary'>next_week</mat-icon>
           <h1 matLine> Jobs </h1>
       </mat-list-item>
-      <mat-list-item routerLink="/about">
+      <mat-list-item routerLink="/about" (click)="menu.toggle()">
         <mat-icon matListIcon color='primary'>help</mat-icon>
           <h1 matLine> About </h1>
       </mat-list-item>
