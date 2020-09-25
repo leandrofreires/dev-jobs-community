@@ -1,5 +1,5 @@
 <mat-accordion class="mat-elevation-z6">
-    <mat-expansion-panel *ngFor="let issue of issues">
+    <mat-expansion-panel *ngFor="let issue of issues | search: search">
         <mat-expansion-panel-header>
             <mat-panel-title>
                 {{issue.title}}
@@ -15,6 +15,7 @@
         <mat-chip-list>
             <mat-chip *ngFor="let label of issue.labels" color="accent" selected>{{label.name}}</mat-chip>
         </mat-chip-list>
+        
         <br>
         <mat-divider></mat-divider>
         <markdown ngPreserveWhitespaces>
