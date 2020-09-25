@@ -9,6 +9,8 @@ import { FooterComponent } from './footer/footer.component';
 
 // shared modules
 import { SharedModule } from './shared/shared.module';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
@@ -22,7 +24,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedModule
+    SharedModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt' } 
