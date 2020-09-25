@@ -14,6 +14,15 @@ export class JobsService {
     { name: "vagas", fullName: "uxbrasil/vagas", owner: "uxbrasil"},
     { name: "vagas", fullName: "frontendbr/vagas", owner: "frontendbr"},
     { name: "vagas", fullName: "backend-br/vagas", owner: "backend-br"},
+    { name: "vagas", fullName: "androiddevbr/vagas", owner: "androiddevbr"},
+    { name: "vagas", fullName: "CocoaHeadsBrasil/vagas", owner: "CocoaHeadsBrasil"},
+    { name: "vagas", fullName: "phpdevbr/vagas", owner: "phpdevbr"},
+    { name: "vagas", fullName: "vuejs-br/vagas", owner: "vuejs-br"},
+    { name: "vagas", fullName: "Gommunity/vagas", owner: "Gommunity"},
+    { name: "vagas", fullName: "flutterbr/vagas", owner: "flutterbr"},
+    { name: "vagas", fullName: "react-brasil/vagas", owner: "react-brasil"},
+    { name: "vagas", fullName: "dotnetdevbr/vagas", owner: "dotnetdevbr"},
+    { name: "vagas", fullName: "rustdevbr/vagas", owner: "rustdevbr"},
   ];
   constructor(private http: HttpClient) { }
 
