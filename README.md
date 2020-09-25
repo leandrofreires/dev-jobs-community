@@ -11,7 +11,10 @@
     <img alt="CircleCI"   src="https://circleci.com/gh/leandrofreires/dev-jobs-community.svg?style=svg" />
   </a>
   <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/leandrofreires/dev-jobs-community?style=flat-square">
+  <img alt="GitHub" src="https://img.shields.io/github/license/leandrofreires/dev-jobs-community?style=flat-square">
 </p>
+
+<a href="https://dev-jobs-community.web.app/">Demo</a>
 
 <h3>The project</h3>
 <p>
@@ -51,6 +54,13 @@
 
 <h3>Screenshots</h3>
 
+<h3>how to run this project</h3>
+<h4>clone this repo</h4>
+<code>git clone https://github.com/leandrofreires/dev-jobs-community</code>
+<h4>install dependencies</h4>
+<code>cd dev-jobs-community && npm install</code>
+<h4>run server</h4>
+<code>npm start</code>
 
 <h3>Assets</h3>
 <p>Are images used from freepick database and all intellectual rights are reserved for them.</p>
