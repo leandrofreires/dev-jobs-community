@@ -5,6 +5,7 @@
         <mat-icon matPrefix>search</mat-icon>
       </mat-form-field>
 </header>
+<mat-progress-bar [fxHide]="issueDone" mode="indeterminate"></mat-progress-bar>
 <section fxLayout="row" fxLayoutAlign="center center">
    <app-jobs-list fxFlex=90 style="margin-top: -100px;"></app-jobs-list>
 </section>

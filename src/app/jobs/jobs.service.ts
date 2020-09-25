@@ -8,6 +8,7 @@ import { Issue, Label } from './issue';
   providedIn: 'root'
 })
 export class JobsService {
+  @Output() loadDone = new EventEmitter<boolean>();
   repos: Repository[] = [
     { name: "vagas", fullName: "qa-brasil/vagas", owner: "qa-brasil"},
     { name: "vagas", fullName: "uxbrasil/vagas", owner: "uxbrasil"},

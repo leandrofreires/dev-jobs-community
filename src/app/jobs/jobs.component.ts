@@ -10,10 +10,14 @@ export class JobsComponent implements OnInit {
   
   repositories: Repository[];
 
+  issueDone = false;
   constructor(private jobsService: JobsService) { }
 
   ngOnInit(): void {
     this.repositories =  this.jobsService.repos;
+    this.jobsService.loadDone.subscribe((event: boolean) => {
+      this.issueDone = event;
+    })
   }
 
 }
