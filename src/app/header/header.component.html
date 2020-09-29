@@ -5,7 +5,7 @@
             <span fxFlex='1 1 auto'></span>
             <nav>
                 <button aria-label="Notifications" matTooltip="Notifications" mat-icon-button><mat-icon>notifications</mat-icon></button>
-                <button aria-label="Share this project" matTooltip="Share" mat-icon-button><mat-icon>share</mat-icon></button>
+                <button aria-label="Share this project" (click)="share()" matTooltip="Share" mat-icon-button><mat-icon>share</mat-icon></button>
                 <a title="project on github" rel="noreferrer nofollow" target="_blank" href="https://github.com/leandrofreires/dev-jobs-community" matTooltip="Follow on Github" mat-icon-button><img alt="logo of github" src="../../assets/github-circle-white-transparent.svg"></a>
             </nav>
     </mat-toolbar>
