@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, SecurityContext } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, SecurityContext } from '@angular/core';
 import { JobsService, Repository } from '../jobs.service';
 import { Issue } from '../issue';
 
@@ -21,17 +21,19 @@ export class JobsListComponent implements OnInit {
     this.loadData();
   }
   async loadData() {
+    let issueResponse: Issue[] = []
     const promises = this.repositories.map(async (repo, idx) => {
-      let issueResponse = await this.jobsService.getIssues(repo).toPromise();
-      this.issues = this.issues.concat(issueResponse);
+      let response = await this.jobsService.getIssues(repo).toPromise()
+      issueResponse = issueResponse.concat(response);
     });
     await Promise.all(promises);
-    this.sort()
+    this.sort(issueResponse);
+    this.issues = issueResponse;
     this.jobsService.loadDone.emit(true)
   }
 
-  sort() {
-    this.issues.sort(function(a,b){
+  sort(issues: Issue[]){
+    issues.sort(function(a,b){
       var keyA = new Date(a.created_at), keyB = new Date(b.created_at);
       if(keyA > keyB) return -1;
       if(keyA < keyB) return 1;
