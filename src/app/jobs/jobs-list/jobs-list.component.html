@@ -1,13 +1,13 @@
 <mat-accordion class="mat-elevation-z6">
-    <mat-expansion-panel *ngFor="let issue of issues | search: search">
-        <mat-expansion-panel-header>
-            <mat-panel-title>
+    <mat-expansion-panel *ngFor="let issue of issues | search: search" >
+        <mat-expansion-panel-header #paneHeader>
+            <mat-panel-title [ngClass.lt-md]="{'issue-title': paneHeader._getExpandedState() === 'collapsed'? true :  false}">
                 {{issue.title}}
             </mat-panel-title>
             <mat-panel-description>
                 <span fxFlex='auto'></span>
-                <mat-chip-list >
-                    <mat-chip fxHide fxShow.gt-md *ngFor="let label of issue.labels | slice:0:5" color="accent" selected>{{label.name}}</mat-chip>
+                <mat-chip-list fxHide [fxShow.gt-md]="paneHeader._getExpandedState() === 'collapsed'? true :  false" >
+                    <mat-chip *ngFor="let label of issue.labels | slice:0:5" color="accent" selected>{{label.name}}</mat-chip>
                 </mat-chip-list>
             </mat-panel-description>
         </mat-expansion-panel-header>
