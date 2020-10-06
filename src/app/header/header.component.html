@@ -1,12 +1,17 @@
 <header>
     <mat-toolbar color='primary'>
+        <mat-toolbar-row>
             <button aria-label="menu" mat-icon-button id="menu" (click)="toogle()"><mat-icon>menu</mat-icon></button>
-            <h1 fxFlexOffset='16px'>Dev Jobs Community</h1>
+            <h1 fxHide.xs>Dev Jobs Community</h1>
             <span fxFlex='1 1 auto'></span>
             <nav>
                 <button aria-label="Notifications" matTooltip="Notifications" mat-icon-button><mat-icon>notifications</mat-icon></button>
                 <button aria-label="Share this project" (click)="share()" matTooltip="Share" mat-icon-button><mat-icon>share</mat-icon></button>
                 <a title="project on github" rel="noreferrer nofollow" target="_blank" href="https://github.com/leandrofreires/dev-jobs-community" matTooltip="Follow on Github" mat-icon-button><img alt="logo of github" src="../../assets/github-circle-white-transparent.svg"></a>
             </nav>
+        </mat-toolbar-row>
+        <mat-toolbar-row fxHide fxShow.xs fxLayoutAlign='center center'>
+            <h1>Dev Jobs Community</h1>
+        </mat-toolbar-row>
     </mat-toolbar>
 </header>
