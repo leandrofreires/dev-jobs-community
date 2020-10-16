@@ -1,11 +1,11 @@
 <header class="header-page" style="height: 457px;" fxLayout="row" fxLayoutAlign="center center">
-    <mat-form-field fxFlex='50' fxFlex.lt-md=90 appearance="outline" class="search-box">
-        <mat-label>Search by skills</mat-label>
-        <input matInput #searchbox (keyup)="onKey(searchbox.value)" placeholder="Example: Remoto, Nodejs, Angular">
-        <mat-icon matPrefix>search</mat-icon>
-      </mat-form-field>
+  <mat-form-field fxFlex='50' fxFlex.lt-md=90 appearance="outline" class="search-box">
+    <mat-label>Search by skills</mat-label>
+    <input matInput #searchbox (keyup)="onKey(searchbox.value)" placeholder="Example: Remoto, Nodejs, Angular">
+    <mat-icon matPrefix>search</mat-icon>
+  </mat-form-field>
 </header>
-<mat-progress-bar [fxHide]="issueDone" mode="indeterminate"></mat-progress-bar>
 <section fxLayout="row" fxLayoutAlign="center center">
+  <mat-progress-bar [fxHide]="issueDone" color='accent' mode="indeterminate"></mat-progress-bar>
    <app-jobs-list [search]="search" fxHide [fxShow]="issueDone" fxFlex=90 style="margin-top: -100px;"></app-jobs-list>
 </section>
