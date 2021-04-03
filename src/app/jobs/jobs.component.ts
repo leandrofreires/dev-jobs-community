@@ -19,15 +19,19 @@ export class JobsComponent implements OnInit {
 
   ngOnInit(): void {
     this.repositories =  this.jobsService.repos;
+    this._snackBar.open("Loading jobs from repos",null , {
+      duration:5000,
+      horizontalPosition: 'end',
+      verticalPosition: 'bottom'
+    })
     this.jobsService.loadDone.subscribe((event: boolean) => {
+      console.log(event)
       this.issueDone = event;
-      if(this.issueDone) {
-        this._snackBar.open("All repositories are loaded","done",{
-          duration:5000,
-          horizontalPosition: 'end',
-          verticalPosition: 'bottom'
-        })
-      }
+      this._snackBar.open("All repositories are loaded",null ,{
+        duration:5000,
+        horizontalPosition: 'end',
+        verticalPosition: 'bottom'
+      })
     })
   }
   onKey(value: string) {
