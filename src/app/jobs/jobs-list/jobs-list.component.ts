@@ -1,6 +1,7 @@
-import { Component, EventEmitter, Input, OnInit, SecurityContext } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { JobsService, Repository } from '../jobs.service';
 import { Issue } from '../issue';
+import { forkJoin } from 'rxjs';
 
 @Component({
   selector: 'app-jobs-list',
@@ -11,7 +12,7 @@ export class JobsListComponent implements OnInit {
 
   @Input() search: string;
 
-  constructor(private jobsService: JobsService ) { }
+  constructor(private jobsService: JobsService) { }
 
   issues: Issue[] = [];
 
@@ -22,21 +23,27 @@ export class JobsListComponent implements OnInit {
   }
   async loadData() {
     let issueResponse: Issue[] = []
-    const promises = this.repositories.map(async (repo, idx) => {
-      let response = await this.jobsService.getIssues(repo).toPromise()
-      issueResponse = issueResponse.concat(response);
+    const resultPrommisses = this.repositories.map((repo) => {
+      return this.jobsService.getIssues(repo);
     });
-    await Promise.all(promises);
-    this.sort(issueResponse);
-    this.issues = issueResponse;
-    this.jobsService.loadDone.emit(true)
+    var response = forkJoin(resultPrommisses);
+    response.subscribe({
+      next: value => value.map(e => issueResponse = issueResponse.concat(e)),
+      complete: () => {
+        this.sort(issueResponse);
+        this.issues = issueResponse;
+        this.jobsService.loadDone.emit(true)
+      }
+    });
+
+
   }
 
-  sort(issues: Issue[]){
-    issues.sort(function(a,b){
+  sort(issues: Issue[]) {
+    issues.sort(function (a, b) {
       var keyA = new Date(a.created_at), keyB = new Date(b.created_at);
-      if(keyA > keyB) return -1;
-      if(keyA < keyB) return 1;
+      if (keyA > keyB) return -1;
+      if (keyA < keyB) return 1;
     });
   }
 }
