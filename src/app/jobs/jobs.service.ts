@@ -11,7 +11,7 @@ export class JobsService {
   @Output() loadDone = new EventEmitter<boolean>();
   repos: Repository[] = [
     { name: "vagas", fullName: "qa-brasil/vagas", owner: "qa-brasil"},
-    { name: "vagas", fullName: "uxbrasil/vagas", owner: "uxbrasil"},
+    // { name: "vagas", fullName: "uxbrasil/vagas", owner: "uxbrasil"},
     { name: "vagas", fullName: "frontendbr/vagas", owner: "frontendbr"},
     { name: "vagas", fullName: "backend-br/vagas", owner: "backend-br"},
     { name: "vagas", fullName: "androiddevbr/vagas", owner: "androiddevbr"},
